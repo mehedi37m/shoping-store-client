@@ -18,7 +18,8 @@ const AllBrandCard = ({item}) => {
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title font-extrabold text-blue-900">{item.name}</h2>
-         <p className="font-bold ">${item.price}</p>
+         <p className="font-bold ">Price:${item.price}</p>
+         <p className="font-bold ">Rating :{item.rating}*</p>
         <div className="card-actions">
         
          <Link to={`/details/${item._id}`}> <button className="btn btn-primary font-extrabold bg-blue-500 border-none">Details</button></Link>

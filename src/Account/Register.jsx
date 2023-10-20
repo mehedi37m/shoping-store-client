@@ -6,6 +6,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 
 
+
 const Register = () => {
 
 const [register, setRegister] = useState('');
@@ -90,6 +91,7 @@ const handleRegister = e =>{
     <div className="text-center lg:text-left">
       <h1 className="text-5xl text-blue-900 font-bold ">Register now!</h1>
      
+  
      
     </div>
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

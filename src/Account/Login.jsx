@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from "../Provider/AuthProvider";
+import Lottie from "lottie-react";
+import login from "../assets/loginnew.json"
 
 const Login = () => {
   const { signIn, user, setUser,signInWithGoogle } = useContext(AuthContext);
@@ -66,6 +68,9 @@ const Login = () => {
               <h1 className="text-5xl font-bold text-blue-900 lg:pt-10">
                 Login now!
               </h1>
+
+              <div className='flex justify-center items-center h-[10vh]'>
+                    <Lottie animationData={login} /> </div>
              
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

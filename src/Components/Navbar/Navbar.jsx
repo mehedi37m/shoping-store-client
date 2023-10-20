@@ -30,13 +30,13 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/about">About</NavLink>
-      </li>
-      <li>
-        <NavLink to="/contact">Contact Us</NavLink>
+        <NavLink to="/myCart">My Cart</NavLink>
       </li>
       <li>
       <NavLink to='/addProduct'>Add Product</NavLink>
+      </li>
+      <li>
+      <NavLink to="/login">Login</NavLink>
       </li>
     </>
   );

@@ -1,20 +1,26 @@
-import React from 'react';
-import AllBrand from '../Allbrand/Allbrand';
+import React from "react";
+import AllBrand from "../Allbrand/Allbrand";
+import Category from "../Category/Category";
+import ExtraSection from "./ExtraSection";
+import UpComing from "./UpComing";
+import Footer from "../Footer/Footer";
+import Banner from "./Banner";
 
 
 
 const Home = () => {
-    return (
-        <div>
-           
-            <AllBrand></AllBrand>
+  return (
+    <div>
+        <Banner></Banner>
+      <Category />
+      {/* <AllBrand></AllBrand> */}
+      <ExtraSection></ExtraSection>
+      <UpComing></UpComing>
 
+     <Footer></Footer>
 
-
-       
-            
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Home;

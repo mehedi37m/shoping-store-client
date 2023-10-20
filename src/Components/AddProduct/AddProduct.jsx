@@ -1,166 +1,194 @@
-import React from 'react';
-import Swal from 'sweetalert2';
+import React, { useState } from "react";
+import Swal from "sweetalert2";
+import Footer from "../Footer/Footer";
+import Lottie from "lottie-react";
+import add from "../../assets/addnew.json"
 
 const AddProduct = () => {
 
+  const [brand, setBrand] = useState("")
 
 
+  const handleSelectChange = (event) => {
+    setBrand(event.target.value);
+  }
 
-    const handleAddProduct = e => {
-        e.preventDefault();
-        const form = e.target;
-        const name = form.name.value;
-        const quantity = form.quantity.value;
-        const taste = form.taste.value;
-        const supplier = form.supplier.value;
-        const category = form.category.value;
-        const details = form.details.value;
-        const photo = form.photo.value;
+
+  const handleAddProduct = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    // const brand = form.brand.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const description = form.description.value;
+   
+   
+    const image_url = form.image_url.value;
     
-        const newProduct = {name, quantity, taste, supplier, category, details, photo};
-        console.log(newProduct)
+
+    const color = [name];
+    const newProduct = {
+      name, 
+      brand,
+      rating,
+      description,
+      price,
+      image_url
     
-        // send data to server 
-       fetch('https://shoping-store-server-hiw8rwnzo.vercel.app/product',{
-        method: 'POST',
-        headers: {
-            "content-type": "application/json",
-        },
-        body: JSON.stringify(newProduct)
-       })
-       .then(res => res.json())
-       .then(data =>{
-        console.log(data);
-        if(data.insertedId){
-            Swal.fire({
-                title: 'success',
-                text: 'user added successfully',
-                icon: 'success',
-                confirmButtonText: 'Cool'
-              })
-        }
-       })
-    
-    
-    }
-    
-    
-    
-    
-      return (
-        <div className="bg-blue-200 p-24">
-          <h1 className="text-4xl font-extrabold text-red-950">addProduct</h1>
-    
-          <form onSubmit={handleAddProduct}>
-            <div className="flex gap-5">
-              <div class="form-control md:w-1/2">
-                <label class="label">
-                  <span class="label-text">Product Name</span>
-                </label>
-                <label class="input-group">
-                  <input name="name"
-                    type="text"
-                    placeholder="Product name"
-                    class="input input-bordered w-full"
-                  />
-                </label>
-              </div>
-    
-              <div class="form-control md:w-1/2">
-                <label class="label">
-                  <span class="label-text">Available Quantity</span>
-                </label>
-                <label class="input-group">
-                  <input name="quantity"
-                    type="text"
-                    placeholder="Available Quantity"
-                    class="input input-bordered w-full"
-                  />
-                </label>
-              </div>
-            </div>
-    
-    
-    
-            <div className="flex gap-5">
-              <div class="form-control md:w-1/2">
-                <label class="label">
-                  <span class="label-text">Supplier</span>
-                </label>
-                <label class="input-group">
-                  <input name="supplier"
-                    type="text"
-                    placeholder="Supplier name"
-                    class="input input-bordered w-full"
-                  />
-                </label>
-              </div>
-    
-              <div class="form-control md:w-1/2">
-                <label class="label">
-                  <span class="label-text">Category</span>
-                </label>
-                <label class="input-group">
-                  <input name="category"
-                    type="text"
-                    placeholder="Category"
-                    class="input input-bordered w-full"
-                  />
-                </label>
-              </div>
-            </div>
-    
-    
-            <div className="flex gap-5">
-              <div class="form-control md:w-1/2">
-                <label class="label">
-                  <span class="label-text">Details</span>
-                </label>
-                <label class="input-group">
-                  <input name="details"
-                    type="text"
-                    placeholder="Details..."
-                    class="input input-bordered w-full"
-                  />
-                </label>
-              </div>
-    
-              <div class="form-control md:w-1/2">
-                <label class="label">
-                  <span class="label-text">Taste</span>
-                </label>
-                <label class="input-group">
-                  <input name="taste"
-                    type="text"
-                    placeholder="Taste"
-                    class="input input-bordered w-full"
-                  />
-                </label>
-              </div>
-            </div>
-    
-             <div>  
-              <div class="form-control w-full">
-                <label class="label">
-                  <span class="label-text">Photo URL</span>
-                </label>
-                <label class="input-group">
-                  <input name="photo"
-                    type="text"
-                    placeholder="Photo URL"
-                    class="input input-bordered w-full"
-                  />
-                </label>
-              </div>
-            </div>
-    
-           <div className="mt-5">
-           <input type="submit" value="Add Product" className="btn btn-block bg-blue-950 text-white" />
-           </div>
-    
-          </form>
-        </div>
-      );
     };
+    console.log(newProduct);
+
+    // send data to server
+    fetch("https://shoping-store-server-mhd9jf0ym.vercel.app/product", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newProduct),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "success",
+            text: "user added successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
+  };
+
+  return (
+    <div>
+
+    <div>
+    <Lottie style={{height:'300px'}} animationData={add} loop={true} />
+    </div>
+
+
+    <div className="bg-blue-200 p-24">
+      <h1 className="text-4xl text-center mb-5 font-extrabold text-red-950">AddProduct</h1>
+
+      <form onSubmit={handleAddProduct}>
+        <div className="lg:grid grid-cols-2 gap-5">
+          <div class="form-control ">
+            <label class="label">
+              <span class="label-text">Product Name</span>
+            </label>
+            <label class="input-group">
+              <input
+                name="name"
+                type="text"
+                placeholder="Product name"
+                class="input input-bordered w-full"
+              />
+            </label>
+          </div>
+
+          <div class="form-control ">
+            <label class="label">
+              <span class="label-text">Brand name</span>
+            </label>
+            <label class="w-full">
+              <select value={brand} onChange={handleSelectChange} class="w-full py-2">
+                <option value="Adidas">Adidas</option>
+                <option value="Nike">Nike</option>
+                <option value="Reebok">Reebok</option>
+                <option value="Puma">Puma</option>
+                <option value="NewBalance">NewBalance</option>
+                <option value="Jordan">Jordan</option>
+              </select>
+            </label>
+          </div>
+
+        </div>
+
+        <div className="flex gap-5">
+          <div class="form-control md:w-1/2">
+            <label class="label">
+              <span class="label-text">Price</span>
+            </label>
+            <label class="input-group">
+              <input
+                name="price"
+                type="text"
+                placeholder="Price"
+                class="input input-bordered w-full"
+              />
+            </label>
+          </div>
+
+          <div class="form-control md:w-1/2">
+            <label class="label">
+              <span class="label-text">Rating</span>
+            </label>
+            <label class="input-group">
+              <input
+                name="rating"
+                type="text"
+                placeholder="Rating"
+                class="input input-bordered w-full"
+              />
+            </label>
+          </div>
+        </div>
+
+       
+          <div class="form-control w-full">
+            <label class="label">
+              <span class="label-text">Description</span>
+            </label>
+            <label class="input-group">
+              <input
+                name="description"
+                type="text"
+                placeholder="Description..."
+                class="input input-bordered w-full"
+              />
+            </label>
+          </div>
+
+         
+       
+
+      
+
+        <div>
+          <div class="form-control w-full">
+            <label class="label">
+              <span class="label-text">Photo URL</span>
+            </label>
+            <label class="input-group">
+              <input
+                name="image_url"
+                type="text"
+                placeholder="image_url"
+                class="input input-bordered w-full"
+              />
+            </label>
+          </div>
+        </div>
+
+        <div className="mt-5">
+          <input
+            type="submit"
+            value="Add Product"
+            className="btn btn-block bg-blue-950 text-white"
+          />
+        </div>
+      </form>
+
+      
+    </div>
+
+  
+
+  <Footer></Footer>
+    </div>
+  );
+};
 
 export default AddProduct;
