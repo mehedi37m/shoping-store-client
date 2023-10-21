@@ -1,7 +1,10 @@
 
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import "./Navbar.css"
+import { BsSun} from 'react-icons/bs';
+import { FaMoon} from 'react-icons/fa';
 
 
 const Navbar = () => {
@@ -20,7 +23,18 @@ const Navbar = () => {
   };
 
 
+  const [theme, setTheme] = useState(false);
+  const handleClick = () => {
+    setTheme(!theme);
+  };
 
+  useEffect(() => {
+    if (theme == true) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  });
 
 
   
@@ -89,6 +103,10 @@ const Navbar = () => {
               </div>
             )}
           </div>
+
+          <button className="" onClick={handleClick}>
+          {theme ? <BsSun size={30}></BsSun> : <FaMoon  size={30}></FaMoon>}
+        </button>
 
           {user ? (
             <button onClick={handleLogOut} className="btn btn-secondary border-none">

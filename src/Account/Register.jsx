@@ -101,27 +101,27 @@ const handleRegister = e =>{
           <label className="label">
             <span className="label-text">Name</span>
           </label>
-          <input name='name' type="text" placeholder="Your full Name" className="input input-bordered" required />
+          <input name='name' type="text" placeholder="Your full Name" className="input input-bordered text-blue-900" required />
         </div>
 
         <div className="form-control">
           <label className="label">
             <span className="label-text">Photo URL</span>
           </label>
-          <input name='photo' type="text" placeholder="Photo URL" className="input input-bordered" required />
+          <input name='photo' type="text" placeholder="Photo URL" className="input text-blue-900 input-bordered" required />
         </div>
 
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input name='email' type="email" placeholder="email" className="input input-bordered" required />
+          <input name='email' type="email" placeholder="email" className="input text-blue-900 input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input name='password' type="password" placeholder="Type Strong Password" className="input input-bordered" required />
+          <input name='password' type="password" placeholder="Type Strong Password" className="input input-bordered text-blue-900" required />
           <label className="label">
            
           </label>

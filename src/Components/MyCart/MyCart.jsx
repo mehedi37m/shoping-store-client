@@ -7,7 +7,7 @@ const MyCart = () => {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/productCart`)
+    fetch(`https://shoping-store-server-7dx1wqdra.vercel.app/productCart`)
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
@@ -27,7 +27,7 @@ const MyCart = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/productCart/${_id}`, {
+        fetch(`https://shoping-store-server-7dx1wqdra.vercel.app/productCart/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -43,7 +43,7 @@ const MyCart = () => {
 
   return (
     <div className="container mx-auto">
-      <h1>welcome</h1>
+      
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 justify-item-center">
         {cart.map((item, index) => (
@@ -53,7 +53,7 @@ const MyCart = () => {
             <div className="card card-compact glass w-96 bg-base-100 shadow-xl">
                   <figure><img className='h-60 w-full' src={item.image_url} alt="Shoes" /></figure>
                 <div className="card-body">
-              <h2 className="card-title">{item.name}</h2>
+              <h2 className="card-title text-blue-900">{item.name}</h2>
             
             <div className="card-actions justify-end">
             <button

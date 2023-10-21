@@ -6,7 +6,7 @@ const Category = () => {
   const [data, setData] = useState([]);
   const [active, setActive] = useState("Nike");
   useEffect(() => {
-    fetch(`https://shoping-store-server-mhd9jf0ym.vercel.app/product`)
+    fetch(`https://shoping-store-server-7dx1wqdra.vercel.app/product`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -22,9 +22,9 @@ const Category = () => {
      </div>
 
 
-      <div>
+      <div >
         <div className="border-none bg-red-200 p-5 rounded-xl md:justify-center md:flex gap-[3vw]">
-          <button
+          <button 
             onClick={() => setActive("Nike")}
             className={`${
               active === "Nike"
@@ -34,7 +34,7 @@ const Category = () => {
           >
             Nike
           </button>
-          <button
+          <button 
             onClick={() => setActive("Adidas")}
             className={`${
               active === "Adidas"
@@ -44,7 +44,7 @@ const Category = () => {
           >
             Adidas
           </button>
-          <button
+          <button 
             onClick={() => setActive("Reebok")}
             className={`${
               active === "Reebok"
@@ -54,7 +54,7 @@ const Category = () => {
           >
             ReeBook
           </button>
-          <button
+          <button 
             onClick={() => setActive("Puma")}
             className={`${
               active === "Puma"
@@ -64,7 +64,7 @@ const Category = () => {
           >
             Puma
           </button>
-          <button
+          <button 
             onClick={() => setActive("Jordan")}
             className={`${
               active === "Jordan"
@@ -74,7 +74,7 @@ const Category = () => {
           >
            Jordan
           </button>
-          <button
+          <button 
             onClick={() => setActive("NewBalance")}
             className={`${
               active === "NewBalance"
@@ -89,7 +89,7 @@ const Category = () => {
 
         </div>
 
-        <div className="grid my-10 grid-cols-1 lg:grid-cols-3 gap-3">
+        <div  className="grid my-10 grid-cols-1 lg:grid-cols-3 gap-3">
           {data.map((item, index) => {
             return <AllBrandCard key={index} item={item} />;
           })}

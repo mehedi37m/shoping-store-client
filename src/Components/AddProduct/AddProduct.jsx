@@ -8,7 +8,7 @@ const AddProduct = () => {
 
   const [brand, setBrand] = useState("")
 
-
+ console.log(brand)
   const handleSelectChange = (event) => {
     setBrand(event.target.value);
   }
@@ -27,7 +27,7 @@ const AddProduct = () => {
     const image_url = form.image_url.value;
     
 
-    const color = [name];
+    console.log(brand)
     const newProduct = {
       name, 
       brand,
@@ -40,7 +40,7 @@ const AddProduct = () => {
     console.log(newProduct);
 
     // send data to server
-    fetch("https://shoping-store-server-mhd9jf0ym.vercel.app/product", {
+    fetch("https://shoping-store-server-7dx1wqdra.vercel.app/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -83,7 +83,7 @@ const AddProduct = () => {
                 name="name"
                 type="text"
                 placeholder="Product name"
-                class="input input-bordered w-full"
+                class="input text-blue-900 input-bordered w-full"
               />
             </label>
           </div>
@@ -93,7 +93,8 @@ const AddProduct = () => {
               <span class="label-text">Brand name</span>
             </label>
             <label class="w-full">
-              <select value={brand} onChange={handleSelectChange} class="w-full py-2">
+              <select value={brand} onChange={handleSelectChange} class="w-full text-blue-900 py-2">
+                <option value="">Select Brand</option>
                 <option value="Adidas">Adidas</option>
                 <option value="Nike">Nike</option>
                 <option value="Reebok">Reebok</option>
@@ -107,16 +108,16 @@ const AddProduct = () => {
         </div>
 
         <div className="flex gap-5">
-          <div class="form-control md:w-1/2">
+          <div class="form-control  md:w-1/2">
             <label class="label">
               <span class="label-text">Price</span>
             </label>
-            <label class="input-group">
+            <label class="input-group ">
               <input
                 name="price"
                 type="text"
                 placeholder="Price"
-                class="input input-bordered w-full"
+                class="input input-bordered text-blue-900 w-full"
               />
             </label>
           </div>
@@ -130,7 +131,7 @@ const AddProduct = () => {
                 name="rating"
                 type="text"
                 placeholder="Rating"
-                class="input input-bordered w-full"
+                class="input text-blue-900 input-bordered w-full"
               />
             </label>
           </div>
@@ -146,7 +147,7 @@ const AddProduct = () => {
                 name="description"
                 type="text"
                 placeholder="Description..."
-                class="input input-bordered w-full"
+                class="input text-blue-900 input-bordered w-full"
               />
             </label>
           </div>
@@ -166,7 +167,7 @@ const AddProduct = () => {
                 name="image_url"
                 type="text"
                 placeholder="image_url"
-                class="input input-bordered w-full"
+                class="input text-blue-900 input-bordered w-full"
               />
             </label>
           </div>

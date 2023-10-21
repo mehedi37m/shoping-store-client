@@ -23,7 +23,7 @@ const Routes = createBrowserRouter ([
             },
             {
                path:"/myCart",
-               element:<MyCart></MyCart>
+               element:<PrivateRoute><MyCart></MyCart></PrivateRoute>
             },
             {
                 path:"/login",
@@ -36,7 +36,7 @@ const Routes = createBrowserRouter ([
             {
                 path: "/details/:id",
                 element:<PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
-                loader:() => fetch('https://shoping-store-server-mhd9jf0ym.vercel.app/product')
+                loader:() => fetch('https://shoping-store-server-7dx1wqdra.vercel.app/product')
             },
             {
                 path: "/addProduct",
@@ -45,7 +45,7 @@ const Routes = createBrowserRouter ([
             {
                 path: "/updateProduct/:id",
                 element:<PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({params}) => fetch(`https://shoping-store-server-mhd9jf0ym.vercel.app/product/${params.id}`)
+                loader: ({params}) => fetch(`https://shoping-store-server-7dx1wqdra.vercel.app/product/${params.id}`)
             },
         ]
     }

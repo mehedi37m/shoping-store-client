@@ -22,8 +22,8 @@ const ExtraSection = () => {
                   />
                 </figure>
                 <div class="card-body">
-                  <h2 class="card-title">BODY BUILDING!</h2>
-                  <p>
+                  <h2 class="card-title text-blue-900">BODY BUILDING!</h2>
+                  <p className='text-blue-900'>
                   Bodybuilding is the best sport when it comes to making your body proportionally shaped and fit.This sport is not only about the body.
                   </p>
                 </div>
@@ -39,8 +39,8 @@ const ExtraSection = () => {
                   />
                 </figure>
                 <div class="card-body">
-                  <h2 class="card-title">OUTSIDE ACTIVITIES</h2>
-                  <p>
+                  <h2 class="card-title text-blue-900">OUTSIDE ACTIVITIES</h2>
+                  <p className='text-blue-900'>
                   Outdoor activities includes walking, fishing, running, playing, mountain hiking, biking, horseback riding, boating and fishing, picnicking ,swimming.
                   </p>
                 </div>
@@ -65,8 +65,8 @@ const ExtraSection = () => {
          data-aos-duration="1000" class="card card-side w-96 bg-base-100 shadow-xl mb-5">
                 
                 <div class="card-body">
-                  <h2 class="card-title">PERSONAL TRAINING</h2>
-                  <p>
+                  <h2 class="card-title text-blue-900">PERSONAL TRAINING</h2>
+                  <p className='text-blue-900'> 
                   A personal trainer is an individual who creates and delivers safe and effective exercise programs for healthy individuals and groups.
                   </p>
                 </div>
@@ -90,8 +90,8 @@ const ExtraSection = () => {
          class="card card-side bg-base-100 w-96 shadow-xl ">
                
                 <div class="card-body">
-                  <h2 class="card-title">ULTIMATE GAMES</h2>
-                  <p>
+                  <h2 class="card-title text-blue-900">ULTIMATE GAMES</h2>
+                  <p className='text-blue-900'>
                   play can promote the acquisition of a variety of skills and abilities including creative thinking, problem solving, adaptability and resourcefulness, and leadership skills.
                   </p>
                 </div>

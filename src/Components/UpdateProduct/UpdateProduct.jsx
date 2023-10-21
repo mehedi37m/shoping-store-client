@@ -1,32 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
   const product = useLoaderData();
+  const [brand, setBrand] = useState("")
+
+  const handleSelectChange = (event) => {
+    setBrand(event.target.value);
+  }
 
   // console.log(product);
 
   const handleUpdate = (e) => {
+    e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const price = form.price.value;
     const rating = form.rating.value;
     const description = form.description.value;
-    const sizes = form.sizes.value;
     const image_url = form.image_url.value;
+    
+      console.log(brand)
+    // console.log(name, brand, price, rating, description,image_url)
     const updateProduct = {
       name,
       rating,
       description,
       price,
-      sizes,
       image_url,
+      brand
     };
     console.log(updateProduct);
 
     // send data to server
     
-    fetch(`https://shoping-store-server-mhd9jf0ym.vercel.app/product/${product._id}`,{
+    fetch(`https://shoping-store-server-7dx1wqdra.vercel.app/product/${product._id}`,{
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -58,6 +67,25 @@ const UpdateProduct = () => {
         </h1>
 
         <form onSubmit={handleUpdate}>
+
+        <div class="form-control w-full">
+            <label class="label">
+              <span class="label-text">Brand name</span>
+            </label>
+            <label class="w-full">
+              <select value={brand} onChange={handleSelectChange} class="w-full text-blue-900 py-2">
+                <option value="">Select Brand</option>
+                <option value="Adidas">Adidas</option>
+                <option value="Nike">Nike</option>
+                <option value="Reebok">Reebok</option>
+                <option value="Puma">Puma</option>
+                <option value="NewBalance">NewBalance</option>
+                <option value="Jordan">Jordan</option>
+              </select>
+            </label>
+          </div>
+
+
           <div class="form-control w-full ">
             <label class="label">
               <span class="label-text">Product Name</span>
@@ -68,7 +96,7 @@ const UpdateProduct = () => {
                 defaultValue={product.name}
                 type="text"
                 placeholder="Product name"
-                class="input input-bordered w-full"
+                class="input text-blue-900 input-bordered w-full"
               />
             </label>
           </div>
@@ -83,7 +111,7 @@ const UpdateProduct = () => {
                 defaultValue={product.price}
                 type="text"
                 placeholder="Price"
-                class="input input-bordered w-full"
+                class="input text-blue-900 input-bordered w-full"
               />
             </label>
           </div>
@@ -98,7 +126,7 @@ const UpdateProduct = () => {
                 defaultValue={product.rating}
                 type="text"
                 placeholder="Rating"
-                class="input input-bordered w-full"
+                class="input text-blue-900 input-bordered w-full"
               />
             </label>
           </div>
@@ -113,7 +141,7 @@ const UpdateProduct = () => {
                 defaultValue={product.description}
                 type="text"
                 placeholder="Description..."
-                class="input input-bordered w-full"
+                class="input text-blue-900 input-bordered w-full"
               />
             </label>
           </div>
@@ -129,7 +157,7 @@ const UpdateProduct = () => {
                   defaultValue={product.image_url}
                   type="text"
                   placeholder="image_url"
-                  class="input input-bordered w-full"
+                  class="input text-blue-900 input-bordered w-full"
                 />
               </label>
             </div>

@@ -24,8 +24,8 @@ const UpComing = () => {
           />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title">Nike</h2>
-          <p>this shoes is coming soon..</p>
+          <h2 className="card-title text-blue-900">Nike</h2>
+          <p className="text-blue-900">this shoes is coming soon..</p>
         </div>
       </div>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -40,8 +40,8 @@ const UpComing = () => {
           />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title">Adidas</h2>
-          <p>this shoes is coming soon..</p>
+          <h2 className="card-title text-blue-900">Adidas</h2>
+          <p className="text-blue-900">this shoes is coming soon..</p>
         </div>
       </div>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -56,8 +56,8 @@ const UpComing = () => {
           />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title">New Balance</h2>
-          <p>this shoes is coming soon..</p>
+          <h2 className="card-title text-blue-900">New Balance</h2>
+          <p className="text-blue-900">this shoes is coming soon..</p>
         </div>
       </div>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -72,8 +72,8 @@ const UpComing = () => {
           />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title">Puma</h2>
-          <p>this shoes is coming soon..</p>
+          <h2 className="card-title text-blue-900">Puma</h2>
+          <p className="text-blue-900">this shoes is coming soon..</p>
         </div>
       </div>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -88,8 +88,8 @@ const UpComing = () => {
           />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title">Jordan</h2>
-          <p>this shoes is coming soon..</p>
+          <h2 className="card-title text-blue-900">Jordan</h2>
+          <p className="text-blue-900">this shoes is coming soon..</p>
         </div>
       </div>
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -104,8 +104,8 @@ const UpComing = () => {
           />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title">Rebook</h2>
-          <p>this shoes is coming soon..</p>
+          <h2 className="card-title text-blue-900">Rebook</h2>
+          <p className="text-blue-900">this shoes is coming soon..</p>
         </div>
       </div>
 

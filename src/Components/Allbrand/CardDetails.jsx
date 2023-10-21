@@ -16,7 +16,7 @@ const CardDetails = () => {
  const addToCart = () => {
 
   
-  fetch("http://localhost:5000/productCart", {
+  fetch("https://shoping-store-server-7dx1wqdra.vercel.app/productCart", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(card),
@@ -44,15 +44,15 @@ const CardDetails = () => {
             <div  class="card grid lg:grid-cols-2 card-side  bg-base-100 shadow-xl mb-5">
                 
                 <div class="p-10 bg-slate-50 text-center">
-                  <h2 class=" font-bold mb-5 text-3xl">{card.name}</h2>
-                  <p className='mb-5'>
+                  <h2 class=" font-bold mb-5 text-blue-900 text-3xl">{card.name}</h2>
+                  <p className='mb-5 text-blue-900'>
                  {card.description}
                   </p>
                   <p className='text-2xl'>
                   <span className='text-blue-900 font-bold'>Price</span> : ${card.price}
                   </p>
                 
-                  <p className='font-bold py-4'>Rating: {card.rating}* </p>
+                  <p className='text-blue-900 font-bold py-4'>Rating: {card.rating}* </p>
 
 
                   <button onClick={()=>addToCart(card)} className='btn btn-accent '>Add to Cart</button>

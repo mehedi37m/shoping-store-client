@@ -1,5 +1,4 @@
 import React from "react";
-import AllBrand from "../Allbrand/Allbrand";
 import Category from "../Category/Category";
 import ExtraSection from "./ExtraSection";
 import UpComing from "./UpComing";

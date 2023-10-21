@@ -4,7 +4,7 @@ import AllBrandCard from "./AllBrandCard";
 const AllBrand = () => {
   const [first, setFirst] = useState([]);
   useEffect(() => {
-    fetch(`https://shoping-store-server-mhd9jf0ym.vercel.app/product`).then(res=>res.json()).then(data=>{
+    fetch(`https://shoping-store-server-7dx1wqdra.vercel.app/product`).then(res=>res.json()).then(data=>{
         // const nike = data.filter(data=>data.brand == 'Nike')
         setFirst(data)
         // console.log(data)
